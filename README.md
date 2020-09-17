@@ -73,17 +73,14 @@ const App = () => {
 3. Create child components focused on a piece of your state:
 
 ```ts
-// TodoItem.tsx
-// Should be imported into
-export interface Todo {
-  done: boolean;
-  text: string;
+// MyChildComponent.tsx
+// Should be imported into the parent state interface
+export interface ChildState {
+  checked: boolean;
 }
 
-// Using the FunState instance as props is optional, but convenient for destructuring
-export const TodoItem: React.FC<FunState<Todo>> = ({prop, get}) => (
-  <input type="checkbox" checked={get().done} onChange=(e => prop('done').set(e.currentTarget.checked))>
-  <input value={get().text} onChange=(e => prop('text').set(e.currentTarget.value))>
+export const MyChildComponent: React.FC<FunState<ChildState>> = ({get, set}) => (
+  <input type="checkbox" checked={get()} onChange=(e => set(e.currentTarget.checked))>
 );
 ```
 

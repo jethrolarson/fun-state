@@ -30,14 +30,14 @@ const initialAppState: TodoApp = {
 
 // Create a FunState instance within a React.FunctionalComponent (uses react hooks)
 const App = () => {
-  const funState = useFunState(initialAppState);
+  const state = useFunState(initialAppState);
   const {todos} = funState.get();
   return (
     {/* Child components can get the root state directly */}
-    <SelectAll {...funState} />
+    <SelectAll state={state} />
     {todos.map((item, i) => (
       {/* or focus down to the state the component needs to interact with */}
-      <TodoItem {...funState.prop('todos').focus(index(i))} />
+      <TodoItem state={state.prop('todos').focus(index(i))} />
     ))}
   );
 };

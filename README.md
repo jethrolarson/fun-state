@@ -3,33 +3,6 @@
 FunState is a React architecture and library for doing fractal, compositional state in a way that is typesafe,
 testable, and easy to refactor.
 
-# Motivation
-
-Don't you hate when you have to update 4 different files (constants, actions, reducer, component, and interface) to make a checkbox do something?
-
-On top of that, manually updating nested data immutably is messy and error prone:
-
-```ts
-SET_TODO_DONE: (state: State): State => {
-  return {
-    ...state,
-    users: state.todos.map((user) => {
-      if ((user.id = action.payload.id)) {
-        return {...user, done: action.payload.checked}
-      }
-      return user
-    })
-  }
-}
-```
-
-And even if you do everything right redux just doesn't seem TypeScript native. Its types are an
-afterthought.
-
-<img src="https://i.imgflip.com/46vcs3.jpg" alt="matrix reference joke" />
-
-With <b>FunState</b> you can make the update in the same file as the checkbox and still have type-safety, testability, and much more concise code.
-
 # Getting Started
 
 FunState works with any react 16.8+ application. Usage without TypeScript works but isn't recommended.

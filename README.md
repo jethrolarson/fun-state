@@ -95,7 +95,7 @@ https://app.lucidchart.com/invitations/accept/657b566b-5302-49c2-a5fa-d0e5957b48
 
 Creates an react-hooks instance of the state machine with a starting state. Any component that calls this becomes an "App".
 
-## funState
+## mockState
 
 ```ts
 <State>(initialState: State) => FunState<State>
@@ -142,7 +142,6 @@ Data structure that holds the state along with a stateful function that updates 
 ```
 
 Mutably merge a partial state into a FunState
-
 
 # TODO / Contributing
 

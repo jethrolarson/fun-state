@@ -28,7 +28,7 @@ export interface FunState<State> {
 }
 
 /**
- * Create a FunState instance
+ * Create a FunState instance from a StateEngine
  */
 export const pureState = <State>({getState, modState}: StateEngine<State>): FunState<State> => {
   const setState = (v: State): void => modState(() => v)
@@ -67,6 +67,9 @@ const subState = <ParentState, ChildState>(
   }
 }
 
+/**
+ * Simple StateEngine that is just based on a single mutible variable. Primarilly used for unit testing.
+ */
 export const standaloneEngine = <State>(initialState: State): StateEngine<State> => {
   let state: State = initialState
   const getState = (): State => state
@@ -76,5 +79,13 @@ export const standaloneEngine = <State>(initialState: State): StateEngine<State>
   return {getState, modState}
 }
 
-export const funState = <State>(initialState: State): FunState<State> =>
+/**
+ * create a FunState instance without react hooks. Primarily useful for unit testing.
+ */
+export const mockState = <State>(initialState: State): FunState<State> =>
   pureState(standaloneEngine<State>(initialState))
+
+/**
+ * @deprecated renamed to `mockState`
+ */
+export const funState = mockState

@@ -1,6 +1,6 @@
-# FunState
+<h1><img src="/jethrolarson/fun-state/docs/logo.svg" alt="" /> Fun-State</h1>
 
-FunState is a React architecture and library for doing fractal, compositional state in a way that is typesafe,
+FunState is a React architecture and library for doing fractal, compositional state in a way that is type-safe,
 testable, and easy to refactor.
 
 # Getting Started
@@ -79,10 +79,6 @@ See [fun-state-examples](https://github.com/jethrolarson/fun-state-examples) for
 - Unit test your updaters and snapshot test your components.
 - As usual, memoizing event handlers can help if you run into rendering performance problems.
 
-# Basic Architecture
-
-https://app.lucidchart.com/invitations/accept/657b566b-5302-49c2-a5fa-d0e5957b4899
-
 # API
 
 ## useFunState
@@ -91,7 +87,7 @@ https://app.lucidchart.com/invitations/accept/657b566b-5302-49c2-a5fa-d0e5957b48
 <State>(initialState: State) => FunState<State>
 ```
 
-Creates an react-hooks instance of the state machine with a starting state. Any component that calls this becomes an "App".
+Creates an react-hooks based FunState instance with a starting state.
 
 ## mockState
 
@@ -99,7 +95,7 @@ Creates an react-hooks instance of the state machine with a starting state. Any 
 <State>(initialState: State) => FunState<State>
 ```
 
-Creates a library-agnostic instance of the state machine with a starting state. This is useful when unit testing functions or components that take a FunState.
+Creates a library-agnostic instance of the state machine with a starting state. This is useful when unit testing functions or components that take a FunState instance.
 
 ## pureState
 
@@ -147,4 +143,4 @@ Mutably merge a partial state into a FunState
 - Add performance benchmarks
 - File bugs
 - Improve documentation
-- Add examples
+- Add more examples

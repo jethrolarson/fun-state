@@ -69,16 +69,15 @@ See [fun-state-examples](https://github.com/jethrolarson/fun-state-examples) for
 # When not to useFunState
 
 - When your data or component heirachy is mostly flat.
-- When our app is not as complex as the token TodoApp then adding these concepts and tools is probably overkill.
+- When your app is not as complex as [TodoMVC](https://todomvc.com/).
 - You're avoiding `FunctionComponent`s
 
 # Tips
 
-- Keep your FunState Apps simple and delegate the complex logic to pure child components, using `.sub()` where practical.
+- Keep your FunState Apps simple and delegate the complex logic to pure child components, using `.prop()` where practical.
 - Use Accessor composition to drill down into deep parts of your tree or operate on multiple items. See `./TodoApp` or <a href="https://github.com/jethrolarson/accessor-ts">accessor-ts docs</a> for examples.
-- If child components need data from multiple places in the state tree, you can create and pass more than one FunState or just pass the root and then query out what you need with Accessors.
+- If child components need data from multiple places in the state tree, you can create and pass more than one FunState or just pass the root and then query what you need with Accessors.
 - Unit test your updaters and snapshot test your components.
-- As usual, memoizing event handlers can help if you run into rendering performance problems.
 
 # API
 
@@ -108,7 +107,7 @@ Creates an instance of funState given a custom StateEngine. If you want to add s
 
 ## Accessor
 
-See <a href="https://github.com/jethrolarson/accessor-ts">accessor-ts</a>
+Used by `FunState:query` and `FunState:focus` for operating on more complex structures. See <a href="https://github.com/jethrolarson/accessor-ts">accessor-ts</a>
 
 ## FunState
 
@@ -128,7 +127,7 @@ export interface FunState<State> {
 }
 ```
 
-Data structure that holds the state along with a stateful function that updates it.
+Data structure that holds the state along with a stateful functions that interact with it.
 
 ## merge
 

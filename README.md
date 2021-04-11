@@ -1,4 +1,4 @@
-<h1><img src="/jethrolarson/fun-state/docs/logo.svg" alt="" /> Fun-State</h1>
+<h1><img src="docs/logo.svg" alt="" /> Fun-State</h1>
 
 FunState is a React architecture and library for doing fractal, compositional state in a way that is type-safe,
 testable, and easy to refactor.

@@ -9,7 +9,7 @@ testable, and easy to refactor.
 FunState works with any react 16.8+ application. Usage without TypeScript works but isn't recommended.
 
 1. `npm install -S fun-state`
-2. Pick or create a component hold the FunState:
+2. Pick or create a component to hold the FunState:
 
 ```ts
 import {index} from 'accessors-ts';
